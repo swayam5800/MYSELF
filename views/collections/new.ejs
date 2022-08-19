@@ -1,0 +1,32 @@
+<%- include('../partials/header cd') -%>
+
+<div class="container">
+    <div class="row" style="margin-top: 60px; color: white;">
+        <div style="width: 50% ; margin:40px auto;">
+            <form action="/col" method="POST">
+                <!--<input class="form-control" type="text" placeholder="suggestion" name="comment[text]">-->
+                <div class="form-group">
+                    <label for="to1" style="font-size: 22px;">link:</label>
+                    <input id="to1" class="form-control" type="text" placeholder="link" name="link" style="height: 48px;">
+                </div>
+                <div class="form-group">
+                    <label for="to2" style="font-size: 22px;">rating:</label>
+                    <input id="to2" class="form-control" type="text" placeholder="rating" name="rating" style="height: 48px;">
+                </div>
+                <div class="form-group">
+                    <label for="to3" style="font-size: 22px;">platform:</label>
+                    <input id="to3" class="form-control" type="text" placeholder="platform" name="platform" style="height: 48px;">
+                </div>
+                <div class="form-group">
+                    <label for="to4" style="font-size: 22px;">question name:</label>
+                    <input id="to4" class="form-control" type="text" placeholder="sum it!!" name="qname" style="height: 48px;">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block btn-lg">Submit!!</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<%- include('../partials/footer lr') -%>

@@ -1,0 +1,38 @@
+<%- include('../partials/header col') -%>
+            <div class="container jumbotron" style="padding-top: 15px; padding-bottom: 15px; border: 0.1px solid white; background:#1e3d59; color: #f5f0e1;">
+                <h2 style="text-align: center; font-size: 40px; font-family: 'Inconsolata', monospace; text-shadow:0px 3px 4px #b7c4bb" class="text-uppercase"><%=currentUser.username%> collection's</h2>
+                <p style="text-align: center;"><a href="/col/new" ><button class="btn btn-large btn-yup" style="font-size: 18px; font-family: 'Rokkitt', serif;">Add more question</button></a></p>
+            </div>
+            <div class="container jumbotron" style="padding-bottom: 15px; border: 0.2px solid black; color: #1e3d59; background: #f5f0e1;" >
+                <table class="table table-hover table-dark ">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="text-center" style="font-size: 23px; font-family: 'Permanent Marker', cursive;">Question</th>
+                        <th scope="col" class="text-center" style="font-size: 23px; font-family: 'Permanent Marker', cursive;">Rating</th>
+                        <th scope="col" class="text-center" style="font-size: 23px; font-family: 'Permanent Marker', cursive;">Platform</th>
+                        <th scope="col" class="text-center" style="font-size: 23px; font-family: 'Permanent Marker', cursive;">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <%currentUser.col.forEach(function(mycol){%>
+                        <tr id="d">
+                            <td class="text-center" style="font-size: 22px; font-family: 'Patrick Hand', cursive;"><a href="<%= mycol.link %>" style="font-family: 'Patrick Hand', cursive; color: #1e3d59;" id="li"><%= mycol.qname %></a></td>
+                            <td class="text-center" style="font-size: 22px; font-family: 'Patrick Hand', cursive;"><%= mycol.rating%></td>
+                            <td class="text-center" style="font-size: 22px; font-family: 'Patrick Hand', cursive;"><%= mycol.platform%></td>
+                            <td class="text-center" style="font-size: 22px; font-family: 'Patrick Hand', cursive;">
+                                <form  action="/col/<%=mycol._id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-xs btn-yup" style="font-size: 20px; font-family: 'Patrick Hand', cursive;">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container">
+                <a href="https://www.onlinegdb.com/online_c++_compiler" style="color: #030303; font-family: 'Rokkitt', serif;
+                    font-size: 22px; font-weight: 700;"><div class="jumbotron btn-own" style="padding-top: 10px; padding-bottom: 10px; text-align: center;">Practice Here</div></a>
+            </div>
+
+
+<%- include('../partials/footer lr') -%>

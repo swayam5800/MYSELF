@@ -1,0 +1,26 @@
+<%- include('../partials/header cd') -%>
+
+<div class="container" style="margin-top: 100px;color: white;">
+    <div class="row">
+        <p style="text-align:center; font-size: 50px; font-family: 'Permanent Marker', cursive">Start your discussion!!</p>
+        <div style="width: 50% ; margin:25px auto;">
+            <form action="/discussions" method="POST">
+                <div class="form-group">
+                    <label for="to" style="font-size: 28px; font-family: 'Patrick Hand', cursive;">Topic:</label>
+                    <input id="to" class="form-control" type="text" placeholder="Topic" name="topic" style="height: 48px; font-family: 'Josefin Sans', sans-serif;">
+                </div>
+                <div class="form-group">
+                    <label for="qu" style="font-size: 28px; font-family: 'Patrick Hand', cursive;">Question:</label>
+                    <textarea id="qu" class="form-control" name="question" rows="5" cols="100" style="font-family: 'Josefin Sans', sans-serif;" ></textarea>
+                </div>
+                
+                <!-- <input class="form-control" type="text" placeholder="Question" name="question"> -->
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block btn-lg">Submit!!</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<%- include('../partials/footer lr') -%>

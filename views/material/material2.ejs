@@ -1,0 +1,98 @@
+<%- include('../partials/header') -%> 
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-md-3 well">
+            <iframe class="well" height="250" src="https://www.youtube.com/embed/GU7DpgHINWQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="well" height="250" src="https://www.youtube.com/embed/vohuRrwbTT4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-8">
+            <div class="jumbotron">
+                <p style="text-align: center; font-family: 'Lexend Tera', sans-serif; font-size: 63px;">Binary Search</p>
+            </div>
+            <div class="jumbotron">
+                <p style="font-size: 30px;">Algorithm</p>
+                <hr>
+                <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                    Given a sorted array arr[] of n elements, write a function to search a given element x in arr[].
+                    A simple approach is to do linear search.The time complexity of above algorithm is O(n). Another approach to perform the same task is using Binary Search.
+                    <br>
+                    Binary Search: Search a sorted array by repeatedly dividing the search interval in half. Begin with an interval covering the whole 
+                    array. If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half.
+                    Otherwise narrow it to the upper half. Repeatedly check until the value is found or the interval is empty.
+                    <br><br>
+                    The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log n).
+                    <br><br>
+                    We basically ignore half of the elements just after one comparison.
+                    <br>
+                    1.Compare x with the middle element.<br>
+                    2.If x matches with middle element, we return the mid index.<br>
+                    3.Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.<br>
+                    4.Else (x is smaller) recur for the left half.<br>
+                </p>
+            </div>
+            <div class="jumbotron">
+
+                <p style="font-size: 30px;">Code</p>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#menu1">C++/C</a></li>
+                    <li><a href="#menu2">Python</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="menu1" class="tab-pane fade in active">
+                        <p style="font-size: 25px;">C++/C</p>
+                        <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                            int binarySearch(int arr[], int l, int r, int x) <br>
+                            { <br>
+                                if (r >= l) { <br>
+                                    int mid = l + (r - l) / 2; <br>
+                            <br>
+                                    if (arr[mid] == x) <br>
+                                        return mid; <br>
+                             <br>
+                                    if (arr[mid] > x)<br> 
+                                        return binarySearch(arr, l, mid - 1, x); <br>
+                            <br>
+                                    return binarySearch(arr, mid + 1, r, x); <br>
+                                } <br>
+                                return -1; <br>
+                            } <br>
+  
+                        </p>
+                    </div>
+                    <div id="menu2" class="tab-pane fade">
+                        <h3>Python</h3>
+                        <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                            def binarySearch (arr, l, r, x): 
+  <br>
+                                #<br> Check base case 
+                                if<br> r >= l: 
+                            <br>
+                                    mid<br> = l + (r - l) // 2
+                            <br>
+                                    #<br> If element is present at the middle itself 
+                                    if<br> arr[mid] == x: 
+                                        return<br> mid 
+                                    <br>
+                                    #<br> If element is smaller than mid, then it  <br>
+                                    # can only be present in left subarray<br> 
+                                    elif<br> arr[mid] > x: 
+                                        return<br> binarySearch(arr, l, mid-1, x) <br>
+                            
+                                    #<br> Else the element can only be present  <br>
+                                    # in right subarray 
+                                    else<br>: 
+                                        return<br> binarySearch(arr, mid + 1, r, x)<br> 
+                            <br>
+                                else: <br>
+                                    # Element is not present in the array <br>
+                                    return -1<br>
+                        </p>    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<%- include('../partials/footer') -%>

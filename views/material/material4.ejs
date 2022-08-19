@@ -1,0 +1,114 @@
+<%- include('../partials/header') -%> 
+<div class="container-fluid">
+    <div class="row"> 
+        <div class="col-md-3 well">
+            <iframe class="well"  height="250" src="https://www.youtube.com/embed/Vca808JTbI8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="well" height="250" src="https://www.youtube.com/embed/5p-s65CjhPU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe class="well" height="250" src="https://www.youtube.com/embed/i-SKeOcBwko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-8 col-lg-8" >
+                <div class="jumbotron " style="font-size: 40px;">
+                    <p style="text-align:center ; font-family: 'Lexend Tera', sans-serif; font-size: 60px;">Bubble Sort</p>
+                </div>
+                <div class="jumbotron " style="font-size: 40px;">
+                    <p style="font-size: 30px;">Algorithm</p>
+                    <hr>
+                    <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                        <span style="font-weight: 600;">Bubble sort</span>, sometimes referred to as sinking sort,
+                        is a simple sorting algorithm that<br> repeatedly steps through the list,
+                        compares adjacent elements and swaps them if they are in the wrong order.
+                        <br>The pass through the list is repeated until the list is sorted.
+                    </p>
+                    <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                        Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.<br>
+                        <p style="font-family: 'Alegreya', serif; font-size: 18px;">Example:</p>
+                        <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">First Pass:</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.</p>
+                        </p>
+                        <p style="font-family: 'Alegreya', serif; font-size: 23px;">
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">Second Pass:</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs<br> one whole pass without any swap to know it is sorted.</p>
+                        </p>
+                        <p style="font-family: 'Alegreya', serif; font-size: 23px;">
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">Third Pass:</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</p>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</p>
+                        </p>
+                    </p>
+                </div>
+                <div class="jumbotron">
+                    <p style="font-size: 30px;">Code</p>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#menu1">C++</a></li>
+                        <li><a href="#menu2">C</a></li>
+                        <li><a href="#menu3">Python</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="menu1" class="tab-pane fade in active">
+                            <h3>C++</h3>
+                            <p style="font-size: 18px; font-family: 'Alegreya', serif;">
+                                void bubbleSort(int arr[], int n)<br> 
+                                { <br> 
+                                    <p style="padding-left: 30px;">
+                                        int i, j;<br>
+                                        for (i = 0; i < n-1; i++)<br>      
+                                        
+                                        // Last i elements are already in place <br> 
+                                        for (j = 0; j < n-i-1; j++)<br>  
+                                            if (arr[j] > arr[j+1]) <br> 
+                                                swap(&arr[j], &arr[j+1]); <br> 
+                                    </p>
+                                }  <br>
+                            </p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>C</h3>
+                            <p style="font-size: 18px; font-family: 'Alegreya', serif;">
+                                void bubbleSort(int arr[], int n)<br> 
+                                { <br> 
+                                    <p style="padding-left: 30px;">
+                                        int i, j;<br>
+                                        for (i = 0; i < n-1; i++)<br>      
+                                        
+                                        // Last i elements are already in place <br> 
+                                        for (j = 0; j < n-i-1; j++)<br>  
+                                            if (arr[j] > arr[j+1]) <br> 
+                                                swap(&arr[j], &arr[j+1]); <br> 
+                                    </p>
+                                }  <br>
+                            </p>
+                        </div>
+                        <div id="menu3" class="tab-pane fade">
+                            <h3>Python</h3>
+                            <p style="font-family: 'Alegreya', serif; font-size: 18px;">
+                                def bubbleSort(arr): <hr>
+                                <p style="padding-left: 30px;">n = len(arr) <hr>
+                                for i in range(n): <hr>
+                            
+                                    
+                                    <span style="padding-left: 18px;">for j in range(0, n-i-1):</span><hr> 
+                            
+                                        <span style="padding-left: 18px;">if arr[j] > arr[j+1] :</span><hr> 
+                                            <span style="padding-left: 18px;">arr[j], arr[j+1] = arr[j+1], arr[j]</span> <hr>
+                                </p>
+                            </p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+
+<%- include('../partials/footer') -%>
